@@ -1,76 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>carousel</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    />
-    <style>
-      .wrap {
-        max-width: 800px;
-        height: 400px;
-        background-color: #ccc;
-        overflow: hidden;
-      }
 
-      .img-wrap {
-        width: 4000px;
-        left: 0px;
-        transition: 0.5s;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>carousel</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <style>
+    .wrap {
+      max-width: 800px;
+      height: 400px;
+      background-color: #ccc;
+      overflow: hidden;
+    }
 
-      li img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+    .img-wrap {
+      /* 1張圖w=800，5張800*5 */
+      width: 4000px;
+      /* left: -800px; */
+      left: 0px;
+      transition: 0.5s;
+    }
 
-      .slider-dots {
-        bottom: 0;
-      }
+    li img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-      .slider-dots li {
-        width: 40px;
-        height: 10px;
-        margin: 0 4px;
-        border: 1px solid #fff;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="wrap mx-auto mt-5 position-relative">
-        <!-- position-absolute會浮起來 -->
-      <ul class="list-unstyled d-flex img-wrap position-absolute">
-        <li>
-          <img src="./imgs/slide1.jpg" alt="" />
-        </li>
-        <li>
-          <img src="./imgs/slide2.jpg" alt="" />
-        </li>
-        <li>
-          <img src="./imgs/slide3.jpg" alt="" />
-        </li>
-        <li>
-          <img src="./imgs/slide4.jpg" alt="" />
-        </li>
-        <li>
-          <img src="./imgs/slide5.jpg" alt="" />
-        </li>
-      </ul>
-      <ul
-        class="list-unstyled slider-dots position-absolute d-flex justify-content-center w-100"
-      >
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </div>
-  </body>
+    .slider-dots {
+      bottom: 0;
+    }
+
+    .slider-dots li {
+      width: 40px;
+      height: 10px;
+      margin: 0 4px;
+      border: 1px solid #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap mx-auto mt-5 position-relative">
+    <!-- position-absolute會浮起來 -->
+    <ul class="list-unstyled d-flex img-wrap position-absolute">
+      <li>
+        <img src="./imgs/slide1.jpg" alt="" />
+      </li>
+      <li>
+        <img src="./imgs/slide2.jpg" alt="" />
+      </li>
+      <li>
+        <img src="./imgs/slide3.jpg" alt="" />
+      </li>
+      <li>
+        <img src="./imgs/slide4.jpg" alt="" />
+      </li>
+      <li>
+        <img src="./imgs/slide5.jpg" alt="" />
+      </li>
+    </ul>
+    <ul class="list-unstyled slider-dots position-absolute d-flex justify-content-center w-100">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+  <script>
+
+    $("li").mouseenter(function () {
+      // get index
+      b = $(this).index();
+      console.log(b);
+
+      // left應該是多少
+      left = (-800) * b
+      console.log(left);
+
+      // 連接字串
+      left_px = left + "px";
+      console.log(left_px);
+
+      // 改left
+      $(".img-wrap").css("left", left_px)
+
+    })
+
+
+    $("li").hover(function () {
+      $(this).css("background", "white")
+    }, function () {
+      $(this).css("background", "transparent")
+    });
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
 </html>
