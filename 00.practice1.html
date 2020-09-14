@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <table class="table table-bordered">
+        <tr>
+            <td><input type="checkbox" name="" id="checkbox0" /></td>
+            <td>John</td>
+            <td>0910123123</td>
+            <td>john123@gmail.com</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="" id="checkbox1" /></td>
+            <td>Iris</td>
+            <td>0911345345</td>
+            <td>iris123@gmail.com</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="" id="checkbox2" /></td>
+            <td>Adax</td>
+            <td>0918987987</td>
+            <td>adax123@gmail.com</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="" id="checkbox3" /></td>
+            <td>Kris</td>
+            <td>0920123777</td>
+            <td>kris123@gmail.com</td>
+        </tr>
+    </table>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+
+        // test
+        // $("#checkbox1").parent().parent().css("background", "pink");
+
+
+        $("input:checkbox").click((e) => {
+            console.log(e.target.id)
+            let i = e.target.id.replace('checkbox', '')
+            console.log(i)
+
+            var checkbox1 = $("input")[i];
+            console.log(checkbox1)
+            $(".checkbox").eq(0).parent().parent().css("background", "pink");
+
+            if ($(".checkbox").eq(i).is(':checked')) {
+                $(".checkbox").eq(i).parent().parent().css("background", "pink");
+            } else {
+                $(".checkbox").eq(i).parent().parent().css("background", "#fff");
+            }
+
+        })
+
+
+
+
+
+
+
+
+
+
+        // var checkbox1 = $("input")[0];
+        // checkbox1.addEventListener('change', function () {
+        //     if ($("#checkbox1").is(':checked')) {
+        //         $("#checkbox1").parent().parent().css("background", "pink");
+        //     } else {
+        //         $("#checkbox1").parent().parent().css("background", "#fff");
+        //     }
+        // }, false)
+
+        // var checkbox2 = $("input")[1];
+        // checkbox2.addEventListener('change', function () {
+        //     if ($("#checkbox2").is(':checked')) {
+        //         $("#checkbox2").parent().parent().css("background", "pink");
+        //     } else {
+        //         $("#checkbox2").parent().parent().css("background", "#fff");
+        //     }
+        // }, false)
+
+        // var checkbox3 = $("input")[2];
+        // checkbox3.addEventListener('change', function () {
+        //     if ($("#checkbox3").is(':checked')) {
+        //         $("#checkbox3").parent().parent().css("background", "pink");
+        //     } else {
+        //         $("#checkbox3").parent().parent().css("background", "#fff");
+        //     }
+        // }, false)
+
+        // var checkbox4 = $("input")[3];
+        // checkbox4.addEventListener('change', function () {
+        //     if ($("#checkbox4").is(':checked')) {
+        //         $("#checkbox4").parent().parent().css("background", "pink");
+        //     } else {
+        //         $("#checkbox4").parent().parent().css("background", "#fff");
+        //     }
+        // }, false)
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
