@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>www.jb51.net jQuery控制div移動</title>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+<body>
+<div id="switcher" style="width:200px;height:200px;border:solid 1px #000;">
+</div>
+<script>
+$(document).keydown(function(event){
+var keyNum = event.which;  //獲取鍵值
+var Item = $('#switcher');  //要移動的元素
+Item.css({position:'relative'}); //設定position
+switch(keyNum){ //判斷按鍵
+case 37: Item.animate({left:'-=20px'});break;
+case 38: Item.animate({top:'-=20px'});break;
+case 39: Item.animate({left:' =20px'});break;
+case 40: Item.animate({top:' =20px'});break;
+default:
+break;
+}
+});
+</script>
+</body>
+</html>

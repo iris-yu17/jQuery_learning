@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <title>box move</title>
+    <style>
+      .wrap {
+        margin-top: 50px;
+        position: relative;
+        width: 800px;
+        height: 400px;
+        background-color: #eee;
+        overflow: hidden;
+      }
+
+      .box {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 120px;
+        height: 120px;
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap mx-auto">
+      <div class="box"></div>
+    </div>
+
+    <div class="py-3 text-center">
+      <div class="py-1">
+        <button class="btn btn-info" id="up">u</button>
+      </div>
+
+      <div>
+        <button class="btn btn-info" id="left"><</button>
+        <button class="btn btn-info" id="right">></button>
+      </div>
+
+      <div class="py-1">
+        <button class="btn btn-info" id="down">d</button>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $("#right").click(function () {
+        $(".box").css("left", "+=10");
+      });
+
+      $("#left").click(function () {
+        $(".box").css("left", "-=10");
+      });
+
+      $("#up").click(function () {
+        $(".box").css("top", "-=10");
+      });
+
+      $("#down").click(function () {
+        $(".box").css("top", "+=10");
+      });
+
+
+      // 用keyboard
+      $(document).keydown(function (e) {
+        var id = e.keyCode;
+        switch (id) {
+          case 37:
+            $(".box").css("left", "-=10");
+            break;
+          case 38:
+            $(".box").css("top", "-=10");
+            break;
+          case 39:
+            $(".box").css("left", "+=10");
+            break;
+          case 40:
+            $(".box").css("top", "+=10");
+            break;
+        }
+      });
+    </script>
+  </body>
+</html>
