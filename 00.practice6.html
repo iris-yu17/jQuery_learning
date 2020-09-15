@@ -44,24 +44,24 @@
     ];
 
 
-    $("#city").hover(function (event) {
+    $("#city").click(function (event) {
       
-      // 得到hovered選項的index
+      // 得到hovered選項的value
       hovered_index = $(this).val();
       // console.log(hovered_index)
 
-      // test:列出hovered城市的行政區
-      console.log("hovered城市的行政區: " + districtObj[hovered_index])
+      // hovered城市的行政區
+      // console.log("hovered城市的行政區: " + districtObj[hovered_index])
       // console.log(districtObj[hovered_index][0])
 
-      // 得到現在顯示的行政區
-      district_name = $("#district option").text()
-      console.log("現在顯示的行政區: " + district_name)
+      // 現在顯示的行政區
+      // district_name = $("#district option").text()
+      // console.log("現在顯示的行政區: " + district_name)
 
 
+      // JSON.stringify(districtObj[hovered_index]);
 
-      JSON.stringify(districtObj[hovered_index]);
-
+      // 改掉#district option
       $("#district option[value='0']").text(districtObj[hovered_index][0])
 
       $("#district option[value='1']").text(districtObj[hovered_index][1])
