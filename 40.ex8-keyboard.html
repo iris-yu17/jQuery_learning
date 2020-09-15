@@ -35,6 +35,7 @@
       }
     </style>
   </head>
+
   <body>
     <div class="wrap mx-auto">
       <div class="box"></div>
@@ -74,13 +75,17 @@
         let code = e.which;
 
         if (code === 37) {
-          console.log("hi 37");
+          // console.log("hi 37");
+          $(".box").css("left", "-=10");
         } else if (code === 38) {
-          console.log("hi 38");
+          // console.log("hi 38");
+          $(".box").css("top", "-=10");
         } else if (code === 39) {
-          console.log("hi 39");
+          // console.log("hi 39");
+          $(".box").css("left", "+=10");
         } else if (code === 40) {
-          console.log("hi 40");
+          // console.log("hi 40");
+          $(".box").css("top", "+=10");
         }
       });
     </script>
