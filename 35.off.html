@@ -21,8 +21,12 @@
       };
 
       $("#sayHi").on("click", function () {
+        // 用 off無法取消綁定
         // console.log("hi");
       });
+
+      
+      $("#sayHi").on("click", sayHi);
 
       $("#on").on("click", function () {
         // off先歸零再加
