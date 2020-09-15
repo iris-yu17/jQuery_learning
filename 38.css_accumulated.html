@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: #faf;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="extend">extend</button>
+    <button id="shrink">shrink</button>
+    <button id="change_color">change_color</button>
+    <div class="box"></div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $("#extend").click(function () {
+        $(".box").css("width", "+=20");
+      });
+
+      $("#shrink").click(function () {
+        $(".box").css("width", "-=20");
+      });
+
+      let number = 255;
+      $("#change_color").click(function () {
+        let bgData = $(".box").css("background-color");
+        console.log("bgData:", bgData);
+        console.log("bgData type:", typeof bgData);
+        number -= 30;
+        $(".box").css("background", `rgb(255, 170, ${number})`);
+
+      });
+    </script>
+  </body>
+</html>
