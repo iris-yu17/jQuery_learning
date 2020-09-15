@@ -25,7 +25,8 @@
       });
 
       $("#on").on("click", function () {
-        $("#sayHi").off("click", sayHi);
+        // off先歸零再加
+        // $("#sayHi").off("click", sayHi);
         $("#sayHi").on("click", sayHi);
       });
 
