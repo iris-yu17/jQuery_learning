@@ -8,16 +8,16 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
   <style>
-    .small {
-      font-size: 16px;
+    .fontS {
+      font-size: 0.8rem;
     }
 
-    .medium {
-      font-size: 20px;
+    .fontM {
+      font-size: 1rem;
     }
 
-    .large {
-      font-size: 24px;
+    .fontL {
+      font-size: 1.2rem;
     }
   </style>
 </head>
@@ -26,9 +26,9 @@
   <div class="container">
     <div class="py-2 d-flex justify-content-end">
       <div class="btn-group">
-        <button class="btn btn-info" id="small">S</button>
-        <button class="btn btn-info" id="medium">M</button>
-        <button class="btn btn-info" id="large">L</button>
+        <button class="btn btn-info">S</button>
+        <button class="btn btn-info">M</button>
+        <button class="btn btn-info">L</button>
       </div>
     </div>
 
@@ -47,21 +47,23 @@
       </p>
     </article>
   </div>
-
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
   <script>
-    $("#small").click(function () {
-      $("p").addClass("small");
+    $(".btn").click(function () {
+      if ($(this).is(":contains('S')")) {
+        //   console.log("S");
+        $("article").removeClass().addClass("fontS");
+      };
+      if ($(this).is(":contains('M')")) {
+        //   console.log("M");
+        $("article").removeClass().addClass("fontM");
+      };
+      if ($(this).is(":contains('L')")) {
+        //   console.log("L");
+        $("article").removeClass().addClass("fontL");
+      }
     });
-    $("#mediuml").click(function () {
-      $("p").addClass("mediuml");
-    });
-    $("#large").click(function () {
-      $("p").addClass("large");
-    });
-
-
   </script>
 </body>
 
