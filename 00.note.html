@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>add css class</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #afa;
+            margin-top: 10px;
+            transition: 0.5s;
+        }
+
+        /* 選.box且.active */
+        .box.active {
+            background-color: #faf;
+        }
+
+        /* 有空格: 選子孫 */
+        .box .active {
+            ...
+        }
+
+
+        /* 大於: 選下一層 wrap那層 */
+        .box>.active {
+            ...
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box active">
+        <div class="wrap">
+            <div class="active"></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+
+
+    </script>
+</body>
+
+</html>

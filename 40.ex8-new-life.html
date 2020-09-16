@@ -27,7 +27,7 @@
 
       .box {
         position: absolute;
-        top: 0;
+        top: 10px;
         left: 0;
         width: 120px;
         height: 120px;
@@ -35,7 +35,6 @@
       }
     </style>
   </head>
-
   <body>
     <div class="wrap mx-auto">
       <div class="box"></div>
@@ -70,22 +69,62 @@
       crossorigin="anonymous"
     ></script>
     <script>
+      let move = 20;
+      let myInterval = null;
+
+      $("#left").click(function () {
+        let newLeft = parseInt($(".box").css("left"));
+        if (newLeft > 0) {
+          $(".box").css("left", "-=" + move);
+        }
+      });
+
+      $("#right").mousedown(function () {
+        myInterval = setInterval(() => {
+          let newLeft = parseInt($(".box").css("left"));
+          if (newLeft < 680) {
+            $(".box").css("left", "+=" + move);
+          }
+        }, 300);
+      });
+
+      $("#right").mouseup(function () {
+        console.log(myInterval);
+        clearInterval(myInterval);
+      });
+
+      $("#right").click(function () {
+        // console.log(myInterval);
+        // clearInterval(myInterval);
+        // let newLeft = parseInt($(".box").css("left"));
+        // if (newLeft < 680) {
+        //   $(".box").css("left", "+=" + move);
+        // }
+      });
+
       $(document).on("keydown", function (e) {
         // console.log("event:", e);
         let code = e.which;
 
         if (code === 37) {
-          // console.log("hi 37");
-          $(".box").css("left", "-=10");
+          console.log("hi 37");
+          //左
+          console.log("left", $(".box").css("left"));
+          let newLeft = parseInt($(".box").css("left"));
+          if (newLeft > 0) {
+            $(".box").css("left", "-=" + move);
+          }
         } else if (code === 38) {
-          // console.log("hi 38");
-          $(".box").css("top", "-=10");
+          console.log("hi 38");
         } else if (code === 39) {
-          // console.log("hi 39");
-          $(".box").css("left", "+=10");
+          //右
+          console.log("hi 39");
+          let newLeft = parseInt($(".box").css("left"));
+          if (newLeft < 680) {
+            $(".box").css("left", "+=" + move);
+          }
         } else if (code === 40) {
-          // console.log("hi 40");
-          $(".box").css("top", "+=10");
+          console.log("hi 40");
         }
       });
     </script>
