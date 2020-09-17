@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>prop vs attr</title>
+  </head>
+  <body>
+    <span>checkbox1</span>
+    <input type="checkbox" class="checkbox-1" checked />
+
+    <br />
+
+    <span>checkbox2</span>
+    <input type="text" class="checkbox-2" checked />
+    <br />
+
+    <span>checkbox3</span>
+    <input type="password" class="checkbox-3 12345" checked />
+
+    <button>click</button>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      console.log($(".checkbox-1").prop("checked")); //true
+      console.log($(".checkbox-1").attr("checked")); //checked
+      console.log($(".checkbox-2").prop("checked")); //false
+      console.log($(".checkbox-2").attr("checked")); //undefined
+      console.log($(".checkbox-3").prop("checked")); //true（註 3）
+      console.log($(".checkbox-3").attr("class", "123")); //checked
+
+      $("button").click(function () {
+        $(".123").attr("type", "text");
+      });
+    </script>
+  </body>
+</html>
