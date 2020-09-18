@@ -97,6 +97,20 @@ span.check {
   border-radius: 50%;
 }
 
+.relative-btn-left {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.411);
+  border-radius: 50%;
+}
+
+.relative-btn-left.hide {
+  display: none !important;
+}
+
 .relative-btn-right {
   width: 30px;
   height: 30px;
